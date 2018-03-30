@@ -15,32 +15,6 @@ molecules = ethane, methanol
 # the following are required to create the morph in solution
 box.type = rectangular
 box.length = 12.0
-neutralize = yes
-min.nsteps = 100
 
-min.ncyc = 100
-min.restr_force = 10.0
-min.restraint = notsolvent
-
-# heat the system to the final temperature running NVT
-md.heat.nsteps = 500
-md.heat.T = 300.0
-md.heat.restraint = notsolvent
-md.heat.restr_force = 5.0
-
-# fix the density of the system running NpT
-md.press.nsteps = 1000
-md.press.T = 300.0
-md.press.p = 1.0
-md.press.restraint = notsolvent
-md.press.restr_force = 4.0
-
-# restraints release in 4 steps, this is a NpT protocol
-md.relax.nrestr = 4
-md.relax.nsteps = 500
-md.relax.T = 300.0
-md.relax.p = 1.0
-md.relax.restraint = notsolvent
-
-morph_pairs = ethane > methanol
+morph_pairs = ethane > methanol, methanol > ethane
 
